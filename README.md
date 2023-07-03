@@ -1,14 +1,8 @@
-# Expo Router Example
+# 사이드 프로젝트
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+## 결제알림 앱
 
-## 🚀 How to use
+## 구성 라이브러리 (new, core)
 
-```sh
-npx create-expo-app -e with-router
-```
-
-## 📝 Notes
-
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+1. expo-router :: 네비게이션
+2. native-base :: 테마, base component

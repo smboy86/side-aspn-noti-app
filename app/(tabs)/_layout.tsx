@@ -1,4 +1,4 @@
-import { FontAwesome } from '@expo/vector-icons';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { BottomTabBar } from '@react-navigation/bottom-tabs';
 import { BlurView } from 'expo-blur';
 import { Tabs } from 'expo-router';
@@ -27,9 +27,9 @@ export default () => {
         )
       }>
       <Tabs.Screen
-        name='home'
+        name='approval-before'
         options={{
-          href: '/home',
+          href: '/approval-before',
           title: '',
           tabBarIcon: ({ color }) => (
             <View
@@ -39,9 +39,33 @@ export default () => {
                 marginTop: 17,
                 backgroundColor: 'transparent',
               }}>
-              <TabBarIcon name='home' color={color} size={24} />
-              <Text style={{ marginTop: 5, fontSize: 10, opacity: 0.5 }}>
-                Home
+              <TabBarIcon name='file-text-o' color={color} size={24} />
+              <Text style={{ marginTop: 12, fontSize: 10, opacity: 0.5 }}>
+                결재 전
+              </Text>
+            </View>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='approval-after'
+        options={{
+          title: '',
+          headerShown: false,
+          href: {
+            pathname: '/approval-after',
+          },
+          tabBarIcon: ({ color }) => (
+            <View
+              style={{
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: 17,
+                backgroundColor: 'transparent',
+              }}>
+              <TabBarIcon name='file-text-o' color={color} size={24} />
+              <Text style={{ marginTop: 12, fontSize: 10, opacity: 0.5 }}>
+                결재 완료
               </Text>
             </View>
           ),
@@ -65,7 +89,7 @@ export default () => {
               }}>
               <TabBarIcon name='user' color={color} size={24} />
               <Text style={{ marginTop: 5, fontSize: 10, opacity: 0.5 }}>
-                Account
+                설정
               </Text>
             </View>
           ),

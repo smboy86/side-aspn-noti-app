@@ -2,8 +2,9 @@ import { Text, View } from 'react-native';
 import { useAuth } from '../context/authProvider';
 import { LogBox } from 'react-native';
 
+//// DEV - LOGS
 const IGNORED_LOGS = [
-  'In React 18, SSRProvider is not necessary and is a noop. You can remove it from your app.',
+  'In React 18, SSRProvider is not necessary and is a noop. You can remove it from your app.', // native-base
 ];
 
 LogBox.ignoreLogs(IGNORED_LOGS);
@@ -28,6 +29,7 @@ if (__DEV__) {
 
 export default function Index() {
   const { signOut } = useAuth();
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text onPress={() => signOut()}>Sign Out</Text>

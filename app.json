@@ -1,6 +1,6 @@
 {
   "expo": {
-    "scheme": "acme",
+    "scheme": "approbal-noti",
     "icon": "./assets/images/icon.png",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -10,7 +10,25 @@
     "web": {
       "bundler": "metro"
     },
-    "name": "test-aspn-approval",
-    "slug": "test-aspn-approval"
+    "name": "side-approval-noti-app",
+    "slug": "side-approval-noti-app",
+    "extra": {
+      "eas": {
+        "projectId": "6877606a-0354-426f-9d41-8e13ab037f58"
+      }
+    },
+    "android": {
+      "package": "com.smboy86.sideapprovalnotiapp"
+    },
+    "ios": {
+      "bundleIdentifier": "com.smboy86.sideapprovalnotiapp"
+    },
+    "owner": "smboy86",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/6877606a-0354-426f-9d41-8e13ab037f58"
+    }
   }
 }

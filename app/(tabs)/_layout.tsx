@@ -8,10 +8,10 @@ import { Platform, View, Text } from 'react-native';
 export default () => {
   return (
     <Tabs
-      initialRouteName='home'
+      initialRouteName='approval-before'
       screenOptions={{
         tabBarStyle: Platform.OS === 'ios' && {
-          backgroundColor: 'transparent',
+          backgroundColor: '#fff',
         },
         headerShown: false,
       }}

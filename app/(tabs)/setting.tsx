@@ -1,8 +1,6 @@
-import { View, Pressable } from 'react-native';
+import { View } from 'react-native';
 import { useAuth } from '../../context/authProvider';
-import { Link } from 'expo-router';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Box, Button, HStack, Text } from 'native-base';
+import { Button, HStack, Text } from 'native-base';
 
 export default function Setting() {
   const { setUser, user } = useAuth();

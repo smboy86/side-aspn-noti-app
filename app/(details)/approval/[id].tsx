@@ -3,7 +3,6 @@ import { Box, Text } from 'native-base';
 
 export default function DetailApproval() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  console.log('11111 :: ', id);
 
   return (
     <>

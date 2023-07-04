@@ -88,7 +88,7 @@ export default () => {
                 backgroundColor: 'transparent',
               }}>
               <TabBarIcon name='user' color={color} size={24} />
-              <Text style={{ marginTop: 5, fontSize: 10, opacity: 0.5 }}>
+              <Text style={{ marginTop: 12, fontSize: 10, opacity: 0.5 }}>
                 설정
               </Text>
             </View>

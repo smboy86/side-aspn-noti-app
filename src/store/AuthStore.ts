@@ -64,7 +64,7 @@ export const useAuthStore = create<AuthState>()(
         return Promise.resolve();
       },
       token: '',
-      setToken: (token: string) => {
+      setToken: (token: string | undefined) => {
         set({ token: token });
       },
     }),

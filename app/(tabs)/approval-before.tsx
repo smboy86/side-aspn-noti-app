@@ -1,8 +1,9 @@
 import DynamicHeader from '@components/DynamicHeader';
 import StatusBtn from '@components/StatusBtn';
+import { useRouter } from 'expo-router';
 import { Box, HStack, ScrollView, VStack, Text } from 'native-base';
 import { useRef } from 'react';
-import { View, Animated } from 'react-native';
+import { View, Animated, Pressable } from 'react-native';
 
 const DATA = [
   {
@@ -81,6 +82,8 @@ const DATA = [
 
 export default function approvalBefore() {
   const scrollOffsetY = useRef(new Animated.Value(0)).current;
+  const router = useRouter();
+
   return (
     <View>
       <DynamicHeader value={scrollOffsetY} />
@@ -99,7 +102,10 @@ export default function approvalBefore() {
         )}>
         {DATA.map((item) => {
           return (
-            <View
+            <Pressable
+              onPress={() => {
+                router.push(`/approval/${item.id}`);
+              }}
               key={item.id.toString()}
               style={{
                 height: 100,
@@ -133,7 +139,7 @@ export default function approvalBefore() {
                   <StatusBtn type={item.status} />
                 </VStack>
               </HStack>
-            </View>
+            </Pressable>
           );
         })}
       </ScrollView>

@@ -3,14 +3,17 @@ import { Box, Text } from 'native-base';
 
 export default function DetailApproval() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  console.log('11111 :: ', id);
 
   return (
     <>
       <Stack.Screen
         options={{
           title: `ID : ${id} 상세화면`,
-          headerBackTitle: ' ',
+          headerShown: true,
+          headerBackTitle: ' >> ', // 적용안됨
           headerTintColor: '#000',
+          headerBackVisible: true,
         }}
       />
       <Box flex={1} justifyContent={'center'} alignItems={'center'}>

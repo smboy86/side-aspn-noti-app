@@ -1,4 +1,4 @@
-import { SplashScreen, Stack } from 'expo-router';
+import { SplashScreen, Stack, Slot } from 'expo-router';
 
 import {
   useFonts,
@@ -41,6 +41,16 @@ export default function RootLayout() {
                 headerShown: false,
               }}
             />
+            {/* _layout 이 없을땐 이걸 정의하지 않아야 오류가 안 생기나..? */}
+            {/* <Stack.Screen
+              name='(details)'
+              options={{
+                headerShown: false,
+                // headerBackTitle: ' >> ', // 적용안됨
+                // headerTintColor: '#000',
+                // headerBackVisible: true,
+              }}
+            /> */}
             <Stack.Screen
               name='(tabs)'
               options={{

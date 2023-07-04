@@ -3,7 +3,7 @@ import { useSegments, useRouter, useRootNavigationState } from 'expo-router';
 import useAuthStore from '@store/AuthStore';
 
 // TODO - 자동로그인 관련
-export function AuthProvider({ children }: any): ReactNode {
+export function AuthProvider({ children }: any) {
   const { session } = useAuthStore((state) => state);
 
   const segments = useSegments();

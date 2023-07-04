@@ -12,7 +12,6 @@ import Feather from '@expo/vector-icons/Feather';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Images from '../../src/constants/Images';
 import { useState } from 'react';
-import * as Notifications from 'expo-notifications';
 import useAuthStore from '../../src/store/AuthStore';
 
 // async function schedulePushNotification() {
@@ -85,69 +84,71 @@ export default function Login() {
   };
 
   return (
-    <VStack
-      w={'full'}
-      flex={1}
-      px={4}
-      justifyContent={'center'}
-      alignItems={'center'}
-      bg={'white'}>
-      <VStack space={2}>
-        <Box alignItems={'center'}>
-          <Image
-            source={Images.logoFull}
-            w={312 * 0.45}
-            h={112 * 0.45}
-            mb={8}
-            alt='logo img'
+    <>
+      <VStack
+        w={'full'}
+        flex={1}
+        px={4}
+        justifyContent={'center'}
+        alignItems={'center'}
+        bg={'white'}>
+        <VStack space={2}>
+          <Box alignItems={'center'}>
+            <Image
+              source={Images.logoFull}
+              w={312 * 0.45}
+              h={112 * 0.45}
+              mb={8}
+              alt='logo img'
+            />
+          </Box>
+          <Input
+            value={id}
+            onChangeText={handleSetId}
+            w={{
+              base: '85%',
+            }}
+            InputLeftElement={
+              <Icon
+                as={<Ionicons name='ios-person-outline' />}
+                size={4}
+                ml='2'
+                color='muted.400'
+              />
+            }
+            placeholder='아이디'
           />
-        </Box>
-        <Input
-          value={id}
-          onChangeText={handleSetId}
-          w={{
-            base: '85%',
-          }}
-          InputLeftElement={
-            <Icon
-              as={<Ionicons name='ios-person-outline' />}
-              size={4}
-              ml='2'
-              color='muted.400'
-            />
-          }
-          placeholder='아이디'
-        />
-        <Input
-          value={pw}
-          onChangeText={handleSetPw}
-          w={{
-            base: '85%',
-          }}
-          InputLeftElement={
-            <Icon
-              as={<Feather name='lock' />}
-              size={4}
-              ml='2'
-              color='muted.400'
-            />
-          }
-          placeholder='패스워드'
-        />
-      </VStack>
+          <Input
+            value={pw}
+            onChangeText={handleSetPw}
+            w={{
+              base: '85%',
+            }}
+            InputLeftElement={
+              <Icon
+                as={<Feather name='lock' />}
+                size={4}
+                ml='2'
+                color='muted.400'
+              />
+            }
+            placeholder='패스워드'
+          />
+        </VStack>
 
-      <Box w={'full'} alignItems='center'>
-        <Button
-          onPress={() => handleLogin()}
-          w={{
-            base: '85%',
-          }}
-          mt={4}
-          bg={'#2155A6'}
-          fontWeight={'bold'}>
-          로그인
-        </Button>
-      </Box>
-    </VStack>
+        <Box w={'full'} alignItems='center'>
+          <Button
+            onPress={() => handleLogin()}
+            w={{
+              base: '85%',
+            }}
+            mt={4}
+            bg={'#2155A6'}
+            fontWeight={'bold'}>
+            로그인
+          </Button>
+        </Box>
+      </VStack>
+    </>
   );
 }

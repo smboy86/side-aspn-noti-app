@@ -1,4 +1,4 @@
-import { SplashScreen, Stack, Slot } from 'expo-router';
+import { SplashScreen, Stack, Slot } from "expo-router";
 
 import {
   useFonts,
@@ -8,9 +8,9 @@ import {
   NotoSansKR_500Medium,
   NotoSansKR_700Bold,
   NotoSansKR_900Black,
-} from '@expo-google-fonts/noto-sans-kr';
-import { NativeBaseProvider } from 'native-base';
-import { AuthProvider } from '@auth/authProvider';
+} from "@expo-google-fonts/noto-sans-kr";
+import { NativeBaseProvider } from "native-base";
+import { AuthProvider } from "@auth/authProvider";
 
 export default function RootLayout() {
   // useRouterNotifications();
@@ -25,10 +25,10 @@ export default function RootLayout() {
     NotoSansKR_900Black,
   });
 
-  if (!fontsLoaded) {
-    // 추가적으로 store / navigation 로딩 처리도 여기서 해야되는 거 아닌가
-    return <SplashScreen />;
-  }
+  // if (!fontsLoaded) {
+  //   // 추가적으로 store / navigation 로딩 처리도 여기서 해야되는 거 아닌가
+  //   return <SplashScreen />;
+  // }
 
   return (
     <>
@@ -36,7 +36,7 @@ export default function RootLayout() {
         <AuthProvider>
           <Stack>
             <Stack.Screen
-              name='(auth)'
+              name="(auth)"
               options={{
                 headerShown: false,
               }}
@@ -52,7 +52,7 @@ export default function RootLayout() {
               }}
             /> */}
             <Stack.Screen
-              name='(tabs)'
+              name="(tabs)"
               options={{
                 headerShown: false,
               }}
